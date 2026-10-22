@@ -1,0 +1,222 @@
+/* Three-colour scheme: navy, ice, teal */
+:root {
+  --navy: #14213d;
+  --ice: #eef3f8;
+  --teal: #0b7a75;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--navy);
+  background: var(--ice);
+}
+
+.container {
+  width: 100%;
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Hero */
+.hero {
+  background: var(--navy);
+  color: var(--ice);
+  padding: 1.25rem 0 4rem;
+  border-bottom: 0.5rem solid var(--teal);
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  margin-bottom: 3.5rem;
+}
+
+.nav a {
+  color: var(--ice);
+  text-decoration: none;
+  padding: 0.5rem 0;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.nav a:hover,
+.nav a:focus-visible {
+  border-bottom-color: var(--ice);
+}
+
+h1 {
+  margin: 0 0 0.75rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.5rem, 12vw, 4.5rem);
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.tagline {
+  margin: 0;
+  max-width: 30rem;
+  font-size: 1.125rem;
+  opacity: 0.9;
+}
+
+/* Sections */
+.section {
+  padding: 3.5rem 0;
+}
+
+.section-alt {
+  background: #fff;
+}
+
+h2 {
+  margin: 0 0 1.25rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.75rem;
+  line-height: 1.2;
+  padding-left: 0.75rem;
+  border-left: 0.3rem solid var(--teal);
+}
+
+p {
+  margin: 0 0 1rem;
+  max-width: 38rem;
+}
+
+/* Skills */
+.skills {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.skills li {
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--teal);
+  border-radius: 999px;
+  color: var(--teal);
+  font-weight: 600;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.skills li:hover {
+  background: var(--teal);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Projects */
+.projects {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.project {
+  background: #fff;
+  border: 2px solid var(--navy);
+  border-radius: 0.25rem;
+  padding: 1.25rem;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.project h3 {
+  margin: 0 0 0.5rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+
+.project p {
+  margin: 0;
+}
+
+.project:hover {
+  background: var(--navy);
+  color: var(--ice);
+  transform: translateY(-4px);
+}
+
+/* Footer */
+.footer {
+  background: var(--navy);
+  color: var(--ice);
+  padding: 1.5rem 0;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.9375rem;
+}
+
+/* Keyboard focus */
+a:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 3px;
+}
+
+.nav a:focus-visible {
+  outline-color: var(--ice);
+}
+
+/* Larger screens */
+@media (min-width: 600px) {
+  .projects {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .section {
+    padding: 4.5rem 0;
+  }
+}
+
+/* Small phones (around 375px and below) */
+@media (max-width: 400px) {
+  body {
+    font-size: 1rem;
+  }
+
+  .hero {
+    padding-bottom: 3rem;
+  }
+
+  .nav {
+    margin-bottom: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
+  }
+
+  .skills li:hover,
+  .project:hover {
+    transform: none;
+  }
+}
